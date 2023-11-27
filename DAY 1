@@ -26,3 +26,29 @@ OUTPUT---
 ABCDE
 AED
 false
+
+RECURSIVE APPROACH
+
+import java.util.*;
+class HelloWorld {
+    public static boolean meth(String st1,String st2,int n,int m){
+        if (m==0) return true;
+        if(n==0) return false;
+        if(st2.charAt(m-1)==st1.charAt(n-1)){
+            return meth(st1,st2,n-1,m-1);
+        }
+        else{
+            return meth(st1,st2,n-1,m); 
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.next();
+        String s2=sc.next(); 
+      int n=s1.length();
+      int m=s2.length();
+      boolean st=meth(s1,s2,n,m);
+           System.out.println(st);
+       }
+    }
