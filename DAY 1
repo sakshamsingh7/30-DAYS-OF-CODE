@@ -1,0 +1,28 @@
+CHECK STRING TO BE SUBSEQUENCE OF OTHER;
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.next();
+        String s2=sc.next(); 
+        int c=0;
+        for(int i=0;i<s1.length()&&c<s2.length();){
+           if(s1.charAt(i)==s2.charAt(c)) {i++;c++;}
+           else {
+               i++;
+           }
+        }
+       if(c==s2.length()){
+           System.out.println("true");
+       }
+       else{
+           System.out.println("false");
+       }
+    }
+}
+
+OUTPUT---
+ABCDE
+AED
+false
