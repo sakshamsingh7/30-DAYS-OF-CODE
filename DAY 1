@@ -1,4 +1,4 @@
-CHECK STRING TO BE SUBSEQUENCE OF OTHER;
+ Ques1 CHECK STRING TO BE SUBSEQUENCE OF OTHER;
 
 import java.util.*;
 class HelloWorld {
@@ -52,3 +52,31 @@ class HelloWorld {
            System.out.println(st);
        }
     }
+
+Ques2 
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char c[]=new char[256];
+        for(int i=0;i<s.length();i++){
+            c[s.charAt(i)]++;
+        }
+        for(int i=0;i<t.length();i++){
+            c[t.charAt(i)]--;
+        }
+        int p=0;
+        for(int i=0;i<256;i++){
+            if(c[i]!=0){
+                p++;
+            }
+           
+        }
+        if(p!=0){
+            return false;
+        }
+        else return true;
+    }
+}
