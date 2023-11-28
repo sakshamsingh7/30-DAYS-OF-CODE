@@ -1,0 +1,45 @@
+QUES 1 //Leftmost repeating character
+import java.util.*;
+class HelloWorld {
+    public static int  meth(String st1){
+       char[]c=new char[256];
+       for(int i=0;i<st1.length();i++){
+           c[st1.charAt(i)]++;
+       }
+       for(int i=0;i<st1.length();i++){
+           if(c[st1.charAt(i)]>1) return i;
+       }
+       return -1;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.next();
+       
+     int st=meth(s1);
+           System.out.println(st);
+       }
+    }
+
+//OTHER APPROACH 
+traversing from last
+//Leftmost repeating character
+import java.util.*;
+class HelloWorld {
+    public static int  meth(String st1){
+       boolean [] visited=new boolean[256];
+       int c=-1;
+       for(int i=st1.length()-1;i>=0;i--){
+           if(visited[st1.charAt(i)]==true) {
+               c=i;
+               
+           }
+           else {
+               visited[st1.charAt(i)]=true;
+               
+           }
+       }
+      
+       return c;
+    }
+    
