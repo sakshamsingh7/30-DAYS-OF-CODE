@@ -43,3 +43,43 @@ class HelloWorld {
        return c;
     }
     
+QUES 2
+
+//Reverse Words in a String
+
+class Solution {
+    public String reverseWords(String s) {
+        Stack<String> sta=new Stack<>();String k="";
+        int i=0;
+        for(;i<s.length();i++){
+           if(s.charAt(i)!=' '){
+               k+=s.charAt(i);
+           }
+            else{
+                if(k.equals("")){
+              continue;}
+                else{
+                    sta.push(k);
+                  k="";  
+                }
+                
+            }
+            
+        }
+       // explicitly push the last word
+        for(int j=i;j<s.length();j++){
+            k+=s.charAt(j);
+        }
+        sta.push(k);
+        String f="";
+        while(!sta.isEmpty()){
+            f+=sta.pop();
+            f+=" ";
+        }
+        String h="";
+        for(int p=0;p<f.length()-1;p++){
+          h+=f.charAt(p);  
+        }
+        return h.trim();
+    }
+}
