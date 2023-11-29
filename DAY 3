@@ -1,0 +1,24 @@
+QUES 1
+ROTATE ARRAY
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n=nums.length;
+        k=k%n;
+        reverse1(nums,0,n-1);
+        reverse1(nums,0,k-1);
+        reverse1(nums,k,n-1);
+        
+    }
+    public void reverse1(int[] arr,int start,int end){
+        int t=0;
+        for(int i=start;i<=end;i++){
+            
+            if(start<end){
+            t=arr[start];
+            arr[start]=arr[end];
+            arr[end]=t;
+            start++;
+            end--;
+        }}
+    }
+}
