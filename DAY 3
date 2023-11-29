@@ -22,3 +22,21 @@ class Solution {
         }}
     }
 }
+QUES 2
+//Maximun difference
+// Input: nums = [7,1,5,4]
+// Output: 4
+
+class Solution {
+    public int maximumDifference(int[] arr) {
+        int mres=-1;
+        int minr=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>minr){
+            mres=Math.max(mres,arr[i]-minr);}
+            else{
+            minr=Math.min(minr,arr[i]);}
+        }
+        return mres;
+    }
+}
